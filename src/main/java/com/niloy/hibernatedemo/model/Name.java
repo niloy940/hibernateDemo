@@ -1,5 +1,8 @@
 package com.niloy.hibernatedemo.model;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Name {
     private String firstName;
     private String middleName;

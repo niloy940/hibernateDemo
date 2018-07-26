@@ -1,6 +1,14 @@
 package com.niloy.hibernatedemo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Phone {
+    @Id
+    @GeneratedValue
+    private int phoneId;
     private String countryCode;
     private String areaCode;
     private String number;

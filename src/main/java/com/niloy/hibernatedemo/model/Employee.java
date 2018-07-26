@@ -1,9 +1,13 @@
 package com.niloy.hibernatedemo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.time.LocalDate;
 import java.util.List;
 
+@Entity
 public class Employee extends Person {
+    @Id
     private long employeeId;
     private LocalDate joiningDate;
     private Rank rank;
@@ -26,6 +30,30 @@ public class Employee extends Person {
         super(name, addressList, phoneList, sex, dateOfBirth);
         this.employeeId = employeeId;
         this.joiningDate = joiningDate;
+        this.rank = rank;
+    }
+
+    public long getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(long employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public LocalDate getJoiningDate() {
+        return joiningDate;
+    }
+
+    public void setJoiningDate(LocalDate joiningDate) {
+        this.joiningDate = joiningDate;
+    }
+
+    public Rank getRank() {
+        return rank;
+    }
+
+    public void setRank(Rank rank) {
         this.rank = rank;
     }
 

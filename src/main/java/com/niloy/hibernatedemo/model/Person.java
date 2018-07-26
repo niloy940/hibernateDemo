@@ -1,11 +1,18 @@
 package com.niloy.hibernatedemo.model;
 
+import javax.persistence.Embedded;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
 import java.time.LocalDate;
 import java.util.List;
 
+@MappedSuperclass
 public class Person {
+    @Embedded
     private Name name;
+    @OneToMany
     private List<Address> addressList;
+    @OneToMany
     private List<Phone> phoneList;
     private Sex sex;
     private LocalDate dateOfBirth;

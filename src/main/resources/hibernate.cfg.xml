@@ -13,5 +13,8 @@
         <property name="hbm2ddl.auto">update</property>
 
         <mapping class="com.niloy.hibernatedemo.model.Product"/>
+        <mapping class="com.niloy.hibernatedemo.model.Employee"/>
+        <mapping class="com.niloy.hibernatedemo.model.Phone"/>
+        <mapping class="com.niloy.hibernatedemo.model.Address"/>
     </session-factory>
 </hibernate-configuration>
