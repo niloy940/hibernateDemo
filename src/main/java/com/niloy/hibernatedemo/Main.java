@@ -1,5 +1,6 @@
 package com.niloy.hibernatedemo;
 
+import com.niloy.hibernatedemo.model.Product;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,7 +12,7 @@ public class Main {
     public Main(){
         sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 
-        Product product = new Product(2,"Samsung", 20000, "Phone");
+        Product product = new Product(3,"Walton", 15000, "Phone");
 
         Session session = sessionFactory.openSession();
 

@@ -1,4 +1,4 @@
-package com.niloy.hibernatedemo;
+package com.niloy.hibernatedemo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
