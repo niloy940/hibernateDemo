@@ -10,15 +10,14 @@ import java.util.List;
 public class Department {
     @Id
     private String departmentName;
-    @OneToMany
+    @OneToMany(mappedBy = "department")
     private List<Employee> employeeList;
 
     public Department() {
-        employeeList = new ArrayList<>();
     }
 
     public Department(String departmentName) {
-
+        employeeList = new ArrayList<>();
         this.departmentName = departmentName;
     }
 
