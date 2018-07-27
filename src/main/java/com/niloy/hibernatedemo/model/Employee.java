@@ -2,6 +2,7 @@ package com.niloy.hibernatedemo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -11,14 +12,17 @@ public class Employee extends Person {
     private long employeeId;
     private LocalDate joiningDate;
     private Rank rank;
+    @ManyToOne
+    private Department department;
 
     public Employee(){
         super();
+        this.department = null;
     }
 
     public Employee(long employeeId) {
         super();
-        this.employeeId = employeeId;
+        employeeId = employeeId;
     }
 
     public Employee(Name name, List<Address> addressList, List<Phone> phoneList, Sex sex, LocalDate dateOfBirth, long employeeId) {
@@ -57,12 +61,21 @@ public class Employee extends Person {
         this.rank = rank;
     }
 
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
                 "employeeId=" + employeeId +
                 ", joiningDate=" + joiningDate +
                 ", rank=" + rank +
+                ", department=" + department +
                 ", " + super.toString() +
                 '}';
     }
